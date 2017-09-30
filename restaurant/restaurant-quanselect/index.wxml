@@ -1,0 +1,64 @@
+<block wx:if="{{glo_is_load}}">
+    <view class="glo_load_view">
+        <text class="iconfont icon-loading animated infinite rotate mr5"></text><text>正在努力加载</text>
+    </view>
+</block>
+<block wx:else>
+<view class="nonsue tc" bindtap="set_quan_bind" id="0">
+  <label> 不使用代金券
+    <radio checked></radio>
+  </label>
+</view>
+<block wx:if="{{quan_list == null || quan_list == ''}}">
+<!--暂无内容提示 start-->
+<view class="no-content tc">
+    <text class="no-content-icon iconfont icon-yemianwuneirong"></text>
+    <view class="no-content-font">暂无可用代金券</view>
+</view>
+<!--暂无内容提示 end-->
+</block>
+<block wx:else>
+<view class="juan">
+
+  <!--可用代金券-->
+  <view class="canuse">
+    <view class="title">可用代金券</view>
+    <view>
+<block wx:for="{{quan_list}}">
+    <block wx:if="{{item.quan_limit_jiner<cart_all_price}}">
+      <view class="dollar-list" bindtap="set_quan_bind" id="{{item.id}}" data-jiner="{{item.quan_jiner}}">
+        <view class="top write">
+          <view class="status tc f18">{{item.quan_name}}</view>
+          <view class="money-msg f16 fr">¥
+            <text class="money">{{item.quan_jiner}}</text>元</view>
+        </view>
+        <view class="bottom grey">
+          <view>
+            <text class="iconfont icon-time mr10 linght"></text>有效期至：{{item.quan_end_time}}</view>
+          <view>
+            <text class="iconfont icon-info mr10 linght linetext"></text>满{{item.quan_limit_jiner}}元可用</view>
+        </view>
+      </view>
+      </block>
+      <block wx:else>
+      <view class="dollar-list">
+        <view class="top_hui write">
+          <view class="status tc f18">{{item.quan_name}}</view>
+          <view class="money-msg f16 fr">¥
+            <text class="money">{{item.quan_jiner}}</text>元</view>
+        </view>
+        <view class="bottom grey">
+          <view>
+            <text class="iconfont icon-time mr10 linght"></text>有效期至：{{item.quan_end_time}}</view>
+          <view>
+            <text class="iconfont icon-info mr10 linght linetext"></text>满{{item.quan_limit_jiner}}元可用</view>
+        </view>
+      </view>
+    </block>
+</block>
+    </view>
+  </view>
+
+</view>
+</block>
+</block>

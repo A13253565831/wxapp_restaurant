@@ -1,0 +1,26 @@
+/* pages/restaurant/restaurant-comm/index.wxss */
+.r-comm{ background: #fff; margin: 20rpx; border-radius:12rpx; padding:30rpx;}
+.rc-a-img{ width:80rpx; height: 80rpx; border-radius: 50%;}
+.rc-head{ line-height: 80rpx; height: 110rpx; padding-bottom: 30rpx;}
+.icon-xingjifull,.icon-xingjiline{ margin: 0 10rpx;}
+.text-a{ padding-top: 20rpx;}
+.teS{ padding:26rpx 30rpx; width: 100%; height: 240rpx;}
+.rc-n{ font-weight: 600;}
+
+.upload-img{ padding:30rpx 0; overflow: hidden;}
+.upload-img .item{ width:116rpx; height: 116rpx; margin-top: 16rpx; float:left; margin-right: 16rpx;position: relative;}
+.upload-img .item image{ width: 100%; height: 100%;}
+.upload-img .item:nth-child(5n){  margin-right: 0;}
+.upload-img .item.add{ border: 1px solid #ccc; position: relative;}
+.upload-img .item.add::after,.upload-img .item.add::before{ content: ""; width: 50%; height: 4px; border-radius: 2px; display: block; position: absolute; background: #ccc; left: 50%; top: 50%; -webkit-transform: translate(-50%,-50%);transform: translate(-50%,-50%);}
+.upload-img .item-del{position: absolute;top:-10px;left:45px;color:#fff;background:rgba(0, 0, 0, 0.8);border-radius: 50%;width:20px;height: 20px;text-align: center;z-index: 2;}
+.upload-img .item.add::after{ -webkit-transform:translate(-50%，-50%) rotate(90deg);transform:translate(-50%,-50%) rotate(90deg);}
+
+.icon-appreciate,.icon-appreciatefill{ font-size: 32rpx;}
+.zan-box{ padding: 30rpx 0 0; line-height:72rpx;}
+
+.od-f{ height:92rpx;}
+.od-f-btn{ position: fixed; left: 0; right: 0; bottom: 0; border-radius: 0;}
+.od-f-btn::after{ display: none;}
+
+@import "/css/DuoguanDish/DuoguanDish-template-default.wxss";

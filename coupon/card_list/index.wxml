@@ -1,0 +1,38 @@
+<!--pages/111/mallquanselect/index.wxml-->
+<block wx:if="{{glo_is_load}}">
+  <view class="glo_load_view">
+    <text class="iconfont icon-loading animated infinite rotate mr5"></text>
+    <text>正在努力加载</text>
+  </view>
+</block>
+<block wx:else>
+
+  <!--暂无内容提示 start-->
+  <view class="no-content tc" wx:if="{{isSource}}">
+    <text class="no-content-icon iconfont icon-yemianwuneirong"></text>
+    <view class="no-content-font">暂无可用优惠券</view>
+  </view>
+  <!--暂无内容提示 end-->
+
+  <view class="juan">
+
+    <!--可用代金券-->
+    <view class="canuse">
+      <view>
+        <block wx:for="{{list}}"  wx:for-item="vo">
+        <view class="dollar-list" bindtap="set_quan_bind" id="{{item.id}}">
+          <view class="top write">
+            <view class="status tc f18">{{vo.info.title}}</view>
+            <!--<view class="money-msg f16 fr">¥
+              <text class="money">10</text>元</view>-->
+          </view>
+          <view class="bottom grey flex">
+            <view class="sub"><text class="iconfont icon-time mr10 linght"></text>有效期至:{{vo.validName}}</view>
+            <view class="lingqu write" data-cardid='{{vo.info.id}}' bindtap="openCard">领取</view>
+          </view>
+        </view>
+              </block>
+      </view>
+    </view>
+    </view>
+</block>

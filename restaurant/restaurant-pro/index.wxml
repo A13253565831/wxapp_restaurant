@@ -1,0 +1,175 @@
+<block wx:if="{{glo_is_load}}">
+    <view class="glo_load_view">
+        <text class="iconfont icon-loading animated infinite rotate mr5"></text><text>正在努力加载</text>
+    </view>
+</block>
+<block wx:else>
+<view class="p-main flex flexC">
+  <view class="p-top sub">
+    <scroll-view scroll-y="true" class="p-scroll">
+      <view class="p-img">
+        <image src="{{goods_data.g_img}}" mode="aspectFill" class="p-img-item"></image>
+      </view>
+      <view class="p-info">
+
+        <view class="f18">{{goods_data.g_name}}</view>
+        <view class="grey mt5">月售{{goods_data.yue_xiaoliang}}</view>
+        <view class="red f20 mt5">
+          ￥{{goods_data.shop_price}}
+        </view>
+
+        <block wx:if="{{goods_data.goods_specification}}">
+              <view class="count-spec tc" bindtap="guige_select_bind" id="{{goods_data.id}}">
+                  <text class="count-spec-c">{{goods_data.goods_number||0}}</text>
+                  <text>选择规格</text>
+              </view>
+          </block>
+          <block wx:else>
+              <view class="count-set tc">
+                <block wx:if="{{goods_data.goods_number> 0}}">
+                <view class="count-btn gridFourCirle" bindtap="bind_cart_number_jian" id="{{goods_data.id}}">
+                    <text class="iconfont icon-move"></text>
+                  </view>
+                  <input type="number" value="{{goods_data.goods_number}}" class="buy-couts" disabled="true" />
+                  </block>
+                  <view class="count-btn" bindtap="bind_cart_number_jia" id="{{goods_data.id}}">
+                    <text class="count-btn iconfont icon-add"></text>
+                  </view>
+                </view>
+          </block>
+
+        <!--<view class="count-set tc">
+          <block wx:if="{{goods_data.goods_number> 0}}">
+          <view class="count-btn gridFourCirle" bindtap="bind_cart_number_jian" id="{{goods_data.id}}">
+              <text class="iconfont icon-move"></text>
+            </view>
+            <input type="number" value="{{goods_data.goods_number}}" class="buy-couts" disabled="true" />
+            </block>
+            <view class="count-btn" bindtap="bind_cart_number_jia" id="{{goods_data.id}}">
+              <text class="count-btn iconfont icon-add"></text>
+            </view>
+          </view>-->
+
+      </view>
+
+      <view class="p-detail gridXt">
+      
+        <view class="p-item-tit f16 grey">
+          <text class="iconfont icon-text"></text>   商品详情
+        </view>
+
+        <view class="p-text">
+            <text>
+            {{goods_data.g_description}}
+            </text>
+        </view>
+
+      </view>
+
+    </scroll-view>
+  </view>
+
+  <block wx:if="{{ all_g_number > 0 }}">
+  <view class="ress-float gridXt flex">
+    <view class="float-cart" bindtap="cart_list_show_bind">
+      <view class="cart-circle">
+        <text class="iconfont icon-cart"></text>
+        <text class="counts">{{all_g_number}}</text>
+      </view>
+    </view>
+    <view class="float-price sub">
+      <view class="price-count f20 red">
+        <text>￥{{all_g_price}}</text>
+      </view>
+    </view>
+    <view class="float-btn">
+      <button class="float-btn-s" type="primary" bindtap="goods_order_bind" disabled="{{dish_button_status}}" loading="{{submitIsLoading}}">{{dish_yingye_status_text}}</button>
+    </view>
+    </view>
+    </block>
+    <block wx:else>
+    <view class="ress-float gridXt flex cart-none-float">
+      <view class="float-cart">
+      <view class="cart-circle cart-none">
+        <text class="iconfont icon-cart"></text>
+      </view>
+    </view>
+    <view class="float-price sub">
+      <view class="price-count f20 red-none">
+        <text>购物车是空的</text>
+      </view>
+    </view>
+    </view>
+    </block>
+  <!-- 浮动购物车 end-->
+  <!--浮动购物车-->
+  <view class="mallcart" wx:if="{{cart_list_isshow}}">
+    <view class="mc-box">
+      <view class="mc-t" bindtap="cart_delete_bind">
+        <view class="mc-t-de green f16"> <text class="iconfont icon-delete"></text> 清空购物车</view>
+      </view>
+      <block wx:for="{{cart_list}}">
+      <view class="mc-item gridXt flex">
+        <view class="f18 lineText mc-name">
+            <view class="lineText">{{item.goods_name}}</view>
+            <view class="guige f12 linght">{{item.goods_attr}}</view>
+        </view>
+        <view class="mc-m sub ml10">
+          <view class="red f18">
+            ￥{{item.goods_price}}
+          </view>
+          <view class="count-set mc-set tc">
+          <view class="count-btn gridFourCirle" bindtap="bind_cart_number_jian" id="{{item.goods_id}}" data-cid="{{item.id}}" >
+              <text class="iconfont icon-move"></text>
+            </view>
+            <input type="number" value="{{item.goods_number}}" class="buy-couts" disabled="true" />
+            <view class="count-btn" bindtap="bind_cart_number_jia" id="{{item.goods_id}}" data-cid="{{item.id}}" >
+              <text class="count-btn iconfont icon-add"></text>
+            </view>
+          </view>
+        </view>
+      </view>
+      </block>
+    </view>
+    <view class="mc-bg" bindtap="cart_list_show_bind"></view>
+  </view>
+  <!--浮动购物车-->
+
+<!--规格弹出 start-->
+<view class="floatBox floatBoxBg spec-popup {{guigeIsShow?'guige_show':''}}" >
+  <view class="mid spec-box">
+    <view class="fr iconfont icon-close f24" style="position:relative;" bindtap="attr_select_clost_bind"></view>
+    <view class="f18">{{goods_a_info.g_name}}</view>
+<block wx:for="{{goods_specification}}" wx:for-item="itemType">
+    <view class="sp-item f14 flex">
+      <view class="sp-n grey">{{itemType.name}}</view>
+      <view class="sub">
+        <view class="sub-i-i clearfix">
+        <block wx:for="{{itemType.values}}" wx:for-item="itemVal">
+        <block wx:if="{{itemVal.ischeck}}">
+          <text class="sp-item-i gridFourCirle active" bindtap="select_attr_bind" id="{{itemVal.id}}" data-type="{{itemType.name}}">{{itemVal.label}}</text>
+          </block>
+            <block wx:else>
+            <text class="sp-item-i gridFourCirle" bindtap="select_attr_bind" id="{{itemVal.id}}" data-type="{{itemType.name}}">{{itemVal.label}}</text>
+            </block>
+        </block>  
+        </view>
+      </view>
+    </view>
+</block>
+    <view class="gridXt mt15 flex" style="padding-top:40rpx;">
+
+      <view class="sub" style="line-height:72rpx;">
+        <text class="f18 red">￥{{goods_a_info.shop_price}}</text>
+        <text></text>
+      </view>
+      <view class="s-r-box">
+         <button type="primary" class="s-r-box-btn" style="display:block;" bindtap="bind_cart_number_jia" id="{{goods_a_info.id}}">加入购物车</button>
+      </view>
+    </view>
+  </view>
+</view>
+<!--规格弹出 end-->
+
+</view>
+</block>

@@ -1,0 +1,9 @@
+/* pages/pay/pay.wxss */
+.paybox{padding: 30rpx;}
+.pay{background: #fff;}
+.user-msg{background: #fbfbfb;padding: 30rpx;}
+.user-msg input{border-bottom: 1rpx solid #eee;height: 70rpx;}
+.pay-money-box{padding: 30rpx 40rpx;}
+.money-box{border-bottom: 1rpx solid #e8e8e8;line-height: 88rpx;}
+input.money{line-height: 88rpx;height:88rpx;display: inline-block;}
+.pay-money-box .beizhu{border-bottom: 1rpx solid #e8e8e8;width: 100%;margin-top: 20rpx;height: 40rpx;}

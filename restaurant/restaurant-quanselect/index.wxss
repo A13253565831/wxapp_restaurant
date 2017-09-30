@@ -1,0 +1,13 @@
+/* pages/shop/detail-juan/index.wxss */
+.nonsue{width: 710rpx;margin: 20rpx auto;background: #fff;line-height: 80rpx;}
+.canuse,.notuse{padding-top: 30rpx;}
+.juan .title{padding: 0 0 10rpx 40rpx;}
+.dollar-list{width: 690rpx;background: #fff;margin: 0 auto 20rpx;border-radius: 10rpx;overflow: hidden;}
+.top{padding: 50rpx 50rpx 0;background: #f66;height: 160rpx; position: relative; border-bottom: 2rpx dashed #fff;}
+.money-msg , .status{display: inline-block;}
+.money{font-size: 80rpx;}
+.status{line-height: 60rpx; border-radius: 4rpx;}
+.bottom{padding:30rpx;line-height: 50rpx;}
+/*不可用代金劵 样式*/
+.notuse.top{background: #999;}
+.top_hui{padding: 50rpx 50rpx 0;background: #999;height: 160rpx; position: relative; border-bottom: 2rpx dashed #fff;}

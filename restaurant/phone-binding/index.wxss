@@ -1,0 +1,10 @@
+/* pages/logoin/moble/moble.wxss */
+.logoin-bg{width: 100vw;height:100vh;background: #fff;}
+.user-msg{padding: 80rpx 0;}
+.user-img{width: 140rpx;height: 140rpx;border-radius: 20rpx;}
+.moble{padding: 20rpx 40rpx;width: 750rpx;border-radius: 6rpx;}
+.list{line-height: 100rpx;}
+.yanzheng{height: 80rpx;line-height: 80rpx;}
+.list input{line-height: 100rpx;height: 100rpx;}
+
+@import "/css/DuoguanDish/DuoguanDish-template-default.wxss";

@@ -1,0 +1,41 @@
+<!--pages/restaurant/restaurant-juan/index.wxml-->
+<view class="content">
+  <view class="top-bg"></view>
+  <view class="top">
+    <!--本店专享-->
+    <view class="zhuanxiang tc">
+    <view class="title f18">本店专享</view>
+    <view class="mt10">您已领取<text class="red f18">{{quan_list.all_quan_count}}</text>元代金券</view>
+    <view class="f12 mt5">分享给你的小伙伴吧~~</view>
+    </view>
+  </view>
+  <view class="jiuan-bg">
+  <block wx:for="{{quan_list.quan_list}}">
+    <view class="juan-list mt10 flex">
+        <view class="price mr15 red">￥<text class="f36">{{item.quan_jiner}}</text></view>
+        <view class="sub text"><view class="f16">满{{item.quan_limit_jiner}}元可用</view><view class="f12 grey">有效期至{{item.quan_end_time}}</view></view>
+    </view>
+  </block>
+  </view>
+  <view class="btn mt20 mb20">
+    <view class="btn-list"><button class="xiadan f16" bindtap="go_dish_order_bind">去下单</button></view>
+    <view class="btn-list mt10"><button class="zicolor f16" bindtap="go_share_bind">邀请好友一起来</button></view>
+  </view>
+</view>
+<view class="tips zicolor">
+  <view class="tc">活动说明</view>
+  <view class="mt10 f12">
+    <view>1.商家代金券仅限该商家使用，不可用于其他商家</view>
+    <view>2.商家代金券可以与其他活动叠加使用</view>
+  </view>
+</view>
+
+<!--分享弹出框-->
+<view class="share-bg write" wx:if="{{share_is_show}}">
+  <view class="share-content f16 tc">
+    <view>点击右上角：
+      <text class="iconfont icon-fenxiangjiantou"></text>
+    </view>
+    <text>分享给你的小伙伴哦！</text>
+  </view>
+</view>

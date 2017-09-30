@@ -1,0 +1,51 @@
+<block wx:if="{{glo_is_load}}">
+    <view class="glo_load_view">
+        <text class="iconfont icon-loading animated infinite rotate mr5"></text><text>正在努力加载</text>
+    </view>
+</block>
+<block wx:else>
+<form bindsubmit="formSubmit" bindreset="formReset">
+<view class="r-comm">
+    <view class="rc-head gridXb">
+        <image src="{{oinfo.dish_logo}}" mode="aspectFill" class="rc-a-img mr10"></image>
+        <text class="f18 rc-n">{{oinfo.dish_name}}（{{oinfo.dish_quyu}}）</text>
+    </view>
+    <view class="rc-comm">
+        <view class="grey mt20 tc">为商家打分</view>
+        <view class="star-con f36 mt20 tc">
+<block wx:for="{{score_arr}}" wx:for-item="gitem">
+<text class="iconfont  icon-xingji{{gitem.ischeck == true ? 'full' : 'line'}}" bindtap="set_score_bind" id="{{gitem.val}}"></text>
+</block>
+        </view>
+        <view class="text-a">
+            <textarea class="gridFourRadio teS mt20" name="post_content" placeholder="写下对商家的评价吧（至少8个字）" />
+        </view>
+        <view class="upload-img">
+            <block wx:for="{{postimg}}">
+            <view class="item">
+                <image src="{{item}}" mode="aspectFill"></image>
+                <text class="iconfont icon-close item-del" bindtap="del_pic_bind" id="{{index}}"></text>
+            </view>
+        </block>
+            <view class="item add" bindtap="chooseimg_bind"></view>
+        </view>
+        
+        <view class="zan-box gridXt">
+<block wx:for="{{oinfo.glist}}" wx:for-item="gitem">
+            <view class="flex" bindtap="goods_zan_bind" id="{{gitem.goods_id}}">
+                <view class="sub lineText">
+                  {{gitem.goods_name}}
+                </view>
+                <view class="zan-btn green">
+                    <text class="iconfont icon-appreciatefill"></text> 赞
+                </view>
+            </view>
+</block>
+        </view>
+    </view>
+</view>
+<view class="od-f">
+   <button type="primary" hover-class="none" form-type="submit" class="od-f-btn" loading="{{submitIsLoading}}" disabled="{{buttonIsDisabled}}">提交评价</button>
+</view>
+</form>
+</block>

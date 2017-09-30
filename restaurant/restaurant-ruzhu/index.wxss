@@ -1,0 +1,3 @@
+/* pages/restaurant/restaurant-ruzhu/index.wxss */
+.form-title{padding:0 30rpx;}
+.form-list input{padding: 0 30rpx;background: #fff;line-height: 88rpx;height: 88rpx;}

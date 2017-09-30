@@ -1,0 +1,16 @@
+<!--pages/restaurant/restaurant-ruzhu/index.wxml-->
+<form bindsubmit="formSubmit">
+  <view class="form-list">
+    <view class="form-title mt15">商家名称 <text class="red">（必填）</text></view>
+    <input name="dish_name" placeholder="*请输入商家名称" />
+  </view>
+  <view class="form-list">
+    <view class="form-title mt15">详细地址 <text class="red">（必填）</text></view>
+    <input name="dish_address" placeholder="*请输入详细地址" />
+  </view>
+  <view class="form-list">
+    <view class="form-title mt15">手机号码 <text class="red">（必填）</text></view>
+    <input name="dish_phone" placeholder="*请输入您的手机号码" />
+  </view>
+  <view class="m15"><button class="f16" type="primary" formType="submit" disabled="{{btn_submit_disabled}}" loading="{{submitIsLoading}}" hover-class="none">提交申请</button></view>
+</form>

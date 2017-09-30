@@ -1,0 +1,28 @@
+.top-msg{line-height:1.5;position:relative;background:#000;overflow:hidden}
+.topbg{width:100%;height:100%;position:absolute;-webkit-filter:blur(16rpx);opacity:.7;transform:scale(1.2,1.2)}
+.top-content{position:relative;z-index:33;padding:50rpx 30rpx}
+.logo-img{width:160rpx;height:160rpx}
+.logo-img image{width:100%;height:100%;border-radius:50%; box-shadow: 0 0 0 6rpx #fff;}
+.top-msg .name{font-weight:700;line-height:46rpx}
+.other-msg text{padding:4rpx 10rpx;background:#09bb07;border-radius:20rpx}
+.order{background:#fff;padding:30rpx 0}
+.order-item{ width: 120rpx; height: 120rpx; color: #fff; font-weight: bold; line-height: 120rpx; border-radius: 50%; display: inline-block; font-size: 32rpx;}
+.order .sub:nth-child(1) .order-item{ background: #ffc341;}
+.order .sub:nth-child(2) .order-item{ background: #09bb07;}
+.order .sub:nth-child(3) .order-item{ background: #52dddb;}
+.order .sub:nth-child(4) .order-item{ background: #a652ee;}
+.order .sub:active{ opacity: 0.8;}
+.order .sub .order-item.false{ background: #ccc;}
+
+.detail{padding:0 30rpx;background:#fff;line-height:40rpx}
+.list{padding:26rpx 0}
+.environment{padding:30rpx;background:#fff;margin-top:20rpx}
+.pho-content image{width:217rpx;height:160rpx}
+.pho-content image:nth-child(3n+3){margin-right:0}
+
+.eatpay{ position: absolute; right: 30rpx; bottom: 50rpx; font-size: 12px; line-height: 24px; z-index: 999; padding: 0 14px; color: #fff;}
+
+/*回到首页*/
+.go_home{width: 40px;height: 40px;line-height: 40px;font-size: 14px;border-radius: 50%;position: fixed;bottom: 20rpx;right: 20rpx;}
+
+@import "/css/DuoguanDish/DuoguanDish-template-default.wxss";

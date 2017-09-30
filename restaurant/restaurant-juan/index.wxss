@@ -1,0 +1,44 @@
+/* pages/restaurant/restaurant-juan/index.wxss */
+page{background: #fff6d4;}
+.content{background: #fff6d4;padding:40rpx;padding-bottom:0;position: relative;}
+.top{background: #fe5e48;width: 100%;position: relative;border-radius: 0 0 50% 50%;top: -80rpx;overflow: hidden;}
+.top-bg{background: #fe5e48;width: 100%;height: 200rpx;border-radius: 50% 50% 0 0;}
+.zhuanxiang{background-image: linear-gradient(#ffb,#FFF295);width: 85%;margin: auto;padding: 30rpx 40rpx 40rpx;position: relative;z-index: 1;color: #6b4a3c;border-radius: 10rpx;}
+.zicolor{color: #6b4a3c;}
+.zhuanxiang .title{position: relative;display: inline-block;}
+.zhuanxiang .title::before,.zhuanxiang .title::after{content: '';display: block;width: 10rpx;height: 10rpx;background: #6b4a3c;border-radius:50%;position: absolute;top: 0;bottom: 0;margin: auto;}
+.zhuanxiang .title::before{left: -20rpx;}
+.zhuanxiang .title::after{right: -20rpx;}
+
+.jiuan-bg{background:#fa394b;position: relative;margin-top: -251rpx;padding-bottom: 40rpx;}
+.jiuan-bg::before{content: '';display: block;width: 100%;height: 150rpx;background: #fe5e48;border-radius: 0 0 50% 50%;margin: auto;transform: rotate(1.2,1.2)}
+
+.juan-list{width: 85%;background: #fffdf2;position: relative;padding: 30rpx;margin: 20rpx auto 0;}
+.juan-list:first-child{margin-top: 40rpx;}
+.juan-list::before,.juan-list::after{content:'';display:block;width:36rpx;height: 100%;background-image: radial-gradient(#fa394b 10rpx, transparent 0);background-size: 36rpx 36rpx;position: absolute;top: 0;}
+.juan-list::before{left: -18rpx;}
+.juan-list::after{right: -18rpx;}
+.juan-list .price{padding: 9rpx 0;padding-right:20rpx;border-right: 2rpx dashed #fac757;}
+.juan-list .price .f36{line-height: 72rpx;}
+.lingqu{width: 30rpx;vertical-align: middle;}
+.btn-list{padding: 0;}
+button.xiadan{background: #ffd300;}
+.tips{padding:0 40rpx 40rpx;}
+/*分享弹出框*/
+.share-bg {
+  width: 750rpx;
+  height: 100%;
+  text-align: right;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index:10; 
+  /*display: none;*/
+}
+
+.share-content {
+  display: inline-block;
+  width: 360rpx;
+  margin: 60rpx 60rpx 0 0;
+}
